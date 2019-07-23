@@ -1,0 +1,26 @@
+Base Properties
+ENGINE	309bf9dd-efd0-44b5-8366-b7964658e76e
+ENGINE_ALIAS	Movie2
+ENGINE_TYPE	prerna.engine.impl.rdf.BigDataEngine
+RDBMS_INSIGHTS	db/@ENGINE@/insights_database
+OWL	db/@ENGINE@/Movie2_OWL.OWL
+PIXEL_UPDATE	true
+# changing the axiom model to none essentially disables all inference
+com.bigdata.rdf.store.AbstractTripleStore.axiomsClass=com.bigdata.rdf.axioms.NoAxioms
+com.bigdata.rdf.store.AbstractTripleStore.quads=false
+com.bigdata.rdf.store.AbstractTripleStore.statementIdentifiers=false
+com.bigdata.rdf.store.AbstractTripleStore.textIndex=true
+	
+com.bigdata.rdf.sail.bufferCapacity=100000
+
+# turn off automatic inference in the SAIL
+com.bigdata.rdf.sail.truthMaintenance=true
+	
+# The name of the backing file.
+com.bigdata.journal.AbstractJournal.file=db/Movie2__309bf9dd-efd0-44b5-8366-b7964658e76e/Movie2.jnl
+com.bigdata.journal.AbstractJournal.bufferMode=DiskRW
+	
+com.bigdata.btree.writeRetentionQueue.capacity=4000
+com.bigdata.btree.BTree.branchingFactor=512
+	
+com.bigdata.rdf.store.DataLoader.commit=Incremental
